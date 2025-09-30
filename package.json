@@ -1,0 +1,45 @@
+{
+  "name": "swagger-to-tanstack-cli",
+  "version": "1.5.0",
+  "description": "CLI pour générer types, schemas Zod, API functions et hooks TanStack Query organisés par tags depuis Swagger/OpenAPI",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "swagger-to-tanstack": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "swagger",
+    "openapi",
+    "tanstack-query",
+    "react-query",
+    "zod",
+    "typescript",
+    "code-generation",
+    "cli",
+    "nextjs"
+  ],
+  "author": "Ton Nom",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.0.0",
+    "fs-extra": "^11.1.1",
+    "axios": "^1.5.0",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.0",
+    "@types/fs-extra": "^11.0.1",
+    "@types/js-yaml": "^4.0.5",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
