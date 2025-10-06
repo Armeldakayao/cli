@@ -1,0 +1,1 @@
+{"version":3,"file":"type-generator.d.ts","sourceRoot":"","sources":["../../src/utils/type-generator.ts"],"names":[],"mappings":"AA6CA,OAAO,EAAE,YAAY,EAAE,MAAM,kBAAkB,CAAC;AAGhD,qBAAa,aAAa;IACxB,MAAM,CAAC,QAAQ,CAAC,QAAQ,EAAE,YAAY,EAAE,OAAO,EAAE,MAAM,CAAC,MAAM,EAAE,YAAY,CAAC,GAAG,MAAM;CAqCvF"}

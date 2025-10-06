@@ -1,0 +1,1 @@
+{"version":3,"file":"schemas.d.ts","sourceRoot":"","sources":["../../../src/api/authentication/schemas.ts"],"names":[],"mappings":"AAEA,eAAO,MAAM,iBAAiB,KAgB5B,CAAC;AAEH,eAAO,MAAM,cAAc,KAGzB,CAAC;AAEH,eAAO,MAAM,kBAAkB,KAG7B,CAAC;AAEH,eAAO,MAAM,iBAAiB,KAG5B,CAAC;AAEH,eAAO,MAAM,uBAAuB,KAElC,CAAC;AAEH,eAAO,MAAM,sBAAsB,KAGjC,CAAC;AAEH,eAAO,MAAM,uBAAuB,KAGlC,CAAC"}

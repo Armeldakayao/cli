@@ -81,12 +81,14 @@ export function generateCommand(program: Command): void {
         console.log(`🌐 HTTP Client: ${options.httpClient}`);
         console.log(`✅ Validator: ${options.validator}`);
         
-        if (config.includeTags.length > 0) {
-          console.log(`🏷️  Including tags: ${config.includeTags.join(', ')}`);
+        if ((config?.includeTags?.length ?? 0) > 0) {
+          console.log(`🏷️ Including tags: ${config.includeTags!.join(", ")}`);
         }
-        if (config.excludeTags.length > 0) {
-          console.log(`🚫 Excluding tags: ${config.excludeTags.join(', ')}`);
+        
+        if ((config?.excludeTags?.length ?? 0) > 0) {
+          console.log(`🚫 Excluding tags: ${config.excludeTags!.join(", ")}`);
         }
+        
 
         let credentials;
         if (options.username && options.password) {

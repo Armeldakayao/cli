@@ -1,0 +1,2 @@
+export declare const FETCH_UTILS_TEMPLATE = "const getAuthHeaders = () => {\n  const token = localStorage.getItem('token') || localStorage.getItem('authToken');\n  return token ? { 'Authorization': `Bearer ${token}` } : {};\n};\n";
+//# sourceMappingURL=fetch-utils.d.ts.map

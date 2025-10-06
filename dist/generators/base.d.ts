@@ -1,0 +1,47 @@
+import { SwaggerSpec, GroupedEndpoint, SchemaObject, EndpointSpec } from '../types/swagger';
+import { GeneratorConfig, Translations } from '../types/config';
+import { SchemaGenerator } from '../utils/schema-generator';
+export declare class BaseGenerator {
+    protected spec: SwaggerSpec;
+    protected config: GeneratorConfig;
+    protected t: Translations;
+    protected schemaGenerator: SchemaGenerator;
+    constructor(spec: SwaggerSpec, config: GeneratorConfig);
+    generate(): Promise<void>;
+    protected generateQueryKeys(groupedEndpoints: Map<string, GroupedEndpoint[]>): Promise<void>;
+    protected generateRTKConfig(): Promise<void>;
+    protected groupEndpointsByTag(): Map<string, GroupedEndpoint[]>;
+    protected generateTag(tag: string, endpoints: GroupedEndpoint[]): Promise<void>;
+    protected categorizeTypesByTag(types: Set<string>, schemas: Record<string, SchemaObject>): Map<string, Set<string>>;
+    protected mapTypesToTag(schema: any, tag: string, typeToTags: Map<string, Set<string>>): void;
+    protected generateTypesWithCrossTagImports(tagDir: string, currentTag: string, typesByTag: Map<string, Set<string>>, schemas: Record<string, SchemaObject>): Promise<void>;
+    protected generateSchemasWithCrossTagImports(tagDir: string, currentTag: string, typesByTag: Map<string, Set<string>>, schemas: Record<string, SchemaObject>): Promise<void>;
+    protected extractUsedTypes(endpoints: GroupedEndpoint[]): Set<string>;
+    protected collectTypesFromSchema(schema: any, types: Set<string>): void;
+    protected expandTypeDependencies(types: Set<string>, schemas: Record<string, SchemaObject>): Set<string>;
+    protected generateTypes(tagDir: string, usedTypes: Set<string>, schemas: Record<string, SchemaObject>): Promise<void>;
+    protected generateSchemas(tagDir: string, usedTypes: Set<string>, schemas: Record<string, SchemaObject>): Promise<void>;
+    protected generateApiFile(tagDir: string, tag: string, endpoints: GroupedEndpoint[]): Promise<void>;
+    protected generateApiFunction(urlPath: string, method: string, endpoint: EndpointSpec): string;
+    protected generateAxiosCall(url: string, method: string, hasBody: boolean, hasQuery: boolean, isFormData: boolean, returnType: string): string;
+    protected getResponseType(responses: Record<string, any>): string;
+    protected generateFetchCall(url: string, method: string, hasBody: boolean, hasQuery: boolean, isFormData: boolean): string;
+    protected getRequestBodyType(requestBody: any): string;
+    protected getParamType(param: any): string;
+    protected generateTanStackQuery(tagDir: string, tag: string, endpoints: GroupedEndpoint[]): Promise<void>;
+    protected generateTanStackGroupHooks(tagDir: string, tag: string, endpoints: GroupedEndpoint[]): Promise<void>;
+    protected generateTanStackQueryHook(urlPath: string, method: string, endpoint: EndpointSpec, tag: string): string;
+    protected generateTanStackMutationHook(urlPath: string, method: string, endpoint: EndpointSpec, tag: string): string;
+    protected generateRTKQuery(tagDir: string, tag: string, endpoints: GroupedEndpoint[], usedTypes: Set<string>): Promise<void>;
+    protected generateRTKEndpoint(urlPath: string, method: string, endpoint: EndpointSpec, tagPascal: string): string;
+    protected generateSWR(tagDir: string, tag: string, endpoints: GroupedEndpoint[], usedTypes: Set<string>): Promise<void>;
+    protected generateSWRQueryHook(urlPath: string, method: string, endpoint: EndpointSpec): string;
+    protected generateSWRMutationHook(urlPath: string, method: string, endpoint: EndpointSpec): string;
+    protected generateReactQueryKit(tagDir: string, tag: string, endpoints: GroupedEndpoint[], usedTypes: Set<string>): Promise<void>;
+    protected generateReactQueryKitQuery(urlPath: string, method: string, endpoint: EndpointSpec): string;
+    protected generateReactQueryKitMutation(urlPath: string, method: string, endpoint: EndpointSpec): string;
+    protected generateBasic(tagDir: string, tag: string, endpoints: GroupedEndpoint[], usedTypes: Set<string>): Promise<void>;
+    protected generateBasicQueryHook(urlPath: string, method: string, endpoint: EndpointSpec): string;
+    protected generateBasicMutationHook(urlPath: string, method: string, endpoint: EndpointSpec): string;
+}
+//# sourceMappingURL=base.d.ts.map
